@@ -3,8 +3,10 @@ pipeline {
     stages {
         stage('Build') { 
             steps {
+		    script {
                 docker.build("microblog-image")
-				        docker.image("microblog-image").withRun('-p 8000:5000', '--name microblog-con -d')
+		docker.image("microblog-image").withRun('-p 8000:5000', '--name microblog-con -d')
+		    }
                 }
             }
         }
