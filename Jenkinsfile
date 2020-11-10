@@ -5,7 +5,7 @@ pipeline {
             steps {
 		    script {
                 			docker.build('microblog-image')
-					docker.image('microblog-image').withRun('-p 8000:5000')
+					docker.image('microblog-image').run('-p 11000:5000')
 		    }
                 }
             }
